@@ -12,8 +12,8 @@
     
     const intervalId = setInterval(() => {
       if (window["google_optimize"] !== undefined) {
-        console.log(window["google_optimize"].get('HZw7Kn6kQzKF3rcGkOdljw'))
-        variant = window["google_optimize"].get('HZw7Kn6kQzKF3rcGkOdljw');
+        console.log(window["google_optimize"].get('LKGUDSbMRNK4D53eOHqQZQ'))
+        variant = window["google_optimize"].get('LKGUDSbMRNK4D53eOHqQZQ');
         clearInterval(intervalId);
       }
     }, 500);
