@@ -1,6 +1,25 @@
 <script>
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
+    
+  let variant;
+  
+  (async () => {
+
+    if (window["dataLayer"]) {
+      await window["dataLayer"].push({event: 'optimize.activate'});
+    }
+    
+    const intervalId = setInterval(() => {
+      if (window["google_optimize"] !== undefined) {
+        console.log(window["google_optimize"].get('WHJb8m7lSZaz8qgQtPOl9A'))
+        variant = window["google_optimize"].get('WHJb8m7lSZaz8qgQtPOl9A');
+        clearInterval(intervalId);
+      }
+    }, 500);
+  })();
+
+  
 </script>
 
 <main>
@@ -8,6 +27,8 @@
   <h1>Hello world!</h1>
 
   <Counter />
+
+  <p>{variant}</p>
 
   <p>
     Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
