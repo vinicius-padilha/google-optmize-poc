@@ -3,7 +3,7 @@
   import Counter from './lib/Counter.svelte'
     
   let variant;
-  
+
   (async () => {
 
     if (window["dataLayer"]) {
@@ -12,8 +12,8 @@
     
     const intervalId = setInterval(() => {
       if (window["google_optimize"] !== undefined) {
-        console.log(window["google_optimize"].get('WHJb8m7lSZaz8qgQtPOl9A'))
-        variant = window["google_optimize"].get('WHJb8m7lSZaz8qgQtPOl9A');
+        console.log(window["google_optimize"].get('HZw7Kn6kQzKF3rcGkOdljw'))
+        variant = window["google_optimize"].get('HZw7Kn6kQzKF3rcGkOdljw');
         clearInterval(intervalId);
       }
     }, 500);
